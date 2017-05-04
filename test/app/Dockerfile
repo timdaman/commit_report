@@ -7,7 +7,7 @@ RUN apt-get update \
 COPY requirements.txt /
 RUN pip3 install -r /requirements.txt && pip3 install coverage
 COPY test/ssh/ /ssh/
-COPY test/repo /test/repo
+ADD test/repo.tgz /test/
 COPY commit_report.py /
 COPY test/test_commit_report.py /
 ADD test/app/entrypoint.sh /

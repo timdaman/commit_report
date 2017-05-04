@@ -20,7 +20,7 @@ import commit_report
 
 class TestRepo(unittest.TestCase):
     def setUp(self):
-        self.local_repo = 'test/repo'
+        self.local_repo = 'test/test.git'
         self.remote_repo = 'git@git-server:test.git'
         self.cache_path = '.cache/Z2l0QGdpdC1zZXJ2ZXI6dGVzdC5naXQ='
         self.commit_start = '9c83a8a26c3bcd517d310b1a2a4d0a48a1af2ada'
