@@ -3,13 +3,8 @@ import json
 import os
 import sys
 import textwrap
-from io import BytesIO
-import stat
-from datetime import datetime, timezone, timedelta
 import unittest
 from unittest.mock import patch
-
-# from pyfakefs import fake_filesystem_unittest
 import shutil
 from git import Repo
 
