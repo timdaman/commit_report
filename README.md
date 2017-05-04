@@ -1,6 +1,8 @@
 # Git Reporting tool
 This tools generates reports about the commits between two commit hashes. In other word it shows all the commits applied to the first commit that are needed to create the second commit
 
+Basically this is a fancy version of the following command `git log --pretty="format:%h %ar %an %s"`
+
 # Installation
 
 1. Install the python requirements using pip, 
