@@ -103,3 +103,25 @@ To allow more complete testing all tests are run inside a docker container that 
 4. `docker-compose logs app` to see the test results
 5. clean-up containers with `docker-compose down`
 
+
+# Basic design choices
+
+Assumptions:
+* Repos will tend to have multiple reports run on them
+* Repo sizes will not cause issues with network bandwidth or disk space on the host running the script.
+* Repos are not problematically large to process, for example big logs.
+* Reports will not, generally, be repeated so there no point in caching results.
+* Users want to report on the most current state of any repo, event if that requires a git fetch.
+* A SSH agent is functioning and the keys need to access any SSH based remote repos are loaded
+
+Functionality is broken up into a fairly large number os small functions to aid in testing.
+
+I avoided creating classes and objects because the problem being addressed was so simple. At some point it might make sense to go that way but bot yet.
+
+There are several places where code has been structured to make it easier to expand the functionality. For example the cache directory could be settable.
+
+I decided to do a simple clone of the remote repos since it allows future runs of this utility to more quickly create an updated report.
+
+I am not sure namedtuples are really helping here. Probably should have made objects so I could make interacting with them cleaner.
+
+Displaying shorter hashes would probably be a good thing and easy to do.
