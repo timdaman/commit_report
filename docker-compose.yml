@@ -1,0 +1,15 @@
+---
+version: "2"
+services:
+  git-server:
+    build:
+      context: ./
+      dockerfile: test/git-server/Dockerfile
+    ports:
+      - "127.0.0.1:22:22"
+  app:
+    build:
+      context: ./
+      dockerfile: test/app/Dockerfile
+    depends_on:
+      - git-server
